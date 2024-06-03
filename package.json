@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "create-react-app": "^5.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.2",
+    "typescript": "^5.4.5"
+  }
+}
