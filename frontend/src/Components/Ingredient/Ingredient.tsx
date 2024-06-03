@@ -7,7 +7,7 @@ type Props = {
   rating: number; 
 }
 
-const Ingredient = ({ name, description, rating}: Props) => {
+const Ingredient : React.FC<Props>  = ({ name, description, rating}: Props): JSX.Element => {
   const getStars = (rating: number) => {
     let stars = '';
     for (let i = 0; i < rating; i++){
