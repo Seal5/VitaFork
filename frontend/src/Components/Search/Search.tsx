@@ -3,6 +3,11 @@ import { searchIngredient, getIngredientDetails } from '../../api';
 
 type Props = {}
 
+type Props = {
+    onSearchComplete: (ingredient: any) => void;
+};
+
+
 const Search : React.FC<Props> = (props: Props) => {
     const [search,  setSearch] = useState<string>("");
     const [ingredientDetails, setIngredientDetails] = useState<any>(null);
