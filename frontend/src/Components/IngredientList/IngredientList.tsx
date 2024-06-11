@@ -18,7 +18,7 @@ const IngredientList = (props: Props) => {
     const IngredientList: React.FC<Props> = ({ ingredients }) => {
       return (
         <div>
-          {ingredients.map}
+          {ingredients.map()}
         </div>
       )
 }
