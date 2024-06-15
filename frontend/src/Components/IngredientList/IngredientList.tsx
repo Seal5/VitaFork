@@ -1,26 +1,33 @@
 import React from 'react'
 import Ingredient from "../Ingredient/Ingredient"
 
-type Props = {}
-let rating = 3
+type IngredientProps = {
+  id: number;
+  name: string;
+  description: string;
+  rating: number;
+};
 
-const IngredientList = (props: Props) => {
-    type IngredientProps = {
-      name: string;
-      description: string;
-      rating: number;
-    };
-    
-    type Props = {
-      ingredients: IngredientProps[];
-    };
+type Props = {
+  ingredients: IngredientProps[];
+  handleDelete: (id: number) => void;
+};
 
-    const IngredientList: React.FC<Props> = ({ ingredients }) => {
-      return (
-        <div>
-          {ingredients.map()}
-        </div>
-      )
-}
+const IngredientList: React.FC<Props> = ({ ingredients, handleDelete }) => {
+  return (
+    <div>
+      {ingredients.map((ingredient, index) => (
+        <Ingredient
+          key={index}
+          id={index}
+          name={ingredient.name}
+          description={ingredient.description}
+          rating={ingredient.rating}
+          onDelete={handleDelete}
+        />
+      ))}
+    </div>
+  );
+};
 
 export default IngredientList
