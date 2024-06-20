@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { searchIngredient, getIngredientDetails } from '../../api';
+import { getIngredient, getIngredientDetails } from '../../api';
 
 type Props = {
     onSearchComplete: (ingredient: any) => void;
