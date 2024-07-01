@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
-import { getIngredient, getIngredientDetails } from '../../api';
+import { getIngredientDetails } from '../../api';
 
 type Props = {
     onSearchComplete: (ingredient: any) => void;
 };
-
 
 const Search : React.FC<Props> = (props: Props) => {
     const [search,  setSearch] = useState<string>("");
@@ -15,24 +14,21 @@ const Search : React.FC<Props> = (props: Props) => {
     }
 
     const onClick = async (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-        const fdcId = await searchIngredient(search);
-        if (fdcId) {
-            const details = await getIngredientDetails(fdcId);
-            setIngredientDetails(details);
-        }
+        const details = await getIngredientDetails(search);
+        setIngredientDetails(details)
     };
 
     return (
         <div>
             <input value={search} onChange={(event) => handleChange(event)}></input>
             <button onClick={(event) => onClick(event)}>Search</button> 
-            {ingredientDetails && (
+            {/* {ingredientDetails && (
                 <div>
                     <h2>{ingredientDetails.description}</h2>
                     <p>Category: {ingredientDetails.foodCategory}</p>
                     <p>Data Type: {ingredientDetails.dataType}</p>
                 </div>
-            )}
+            )} */}
         </div>
     )
 }

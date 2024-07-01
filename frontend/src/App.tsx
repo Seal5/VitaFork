@@ -1,14 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import IngredientList from "./Components/IngredientList/IngredientList"
+import IngredientManager from "./Components/IngredientManager/IngredientManager"
 import Search from './Components/Search/Search';
 
 function App() {
   return (
     <div className="App">
-        <IngredientList />
-        <Search />
+        <IngredientManager />
     </div>
   );
 }

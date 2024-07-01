@@ -12,11 +12,7 @@ const IngredientManager: React.FC = (props: Props) => {
         rating: number;
     };
 
-    const [ingredients, setIngredients] = useState<IngredientProps[]>([
-        { id: 1, name: 'Sugar', description: 'Sweet ingredient', rating: 4 },
-        { id: 2, name: 'Salt', description: 'Salty ingredient', rating: 3 },
-        { id: 3, name: 'Butter', description: 'Creamy ingredient', rating: 5 },
-      ]);
+    const [ingredients, setIngredients] = useState<IngredientProps[]>([]);
 
     const onSearchComplete = (event : any) => {
         const newIngredient = { id: Date.now(), name: event.target.value, description: 'New ingredient', rating: 3 };
