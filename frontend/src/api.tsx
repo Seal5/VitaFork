@@ -3,19 +3,18 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 const API_KEY = 'AIzaSyB-o7bSi68eviL4f3DUpPiNaojcg5W9nmE';
 const genAI = new GoogleGenerativeAI(API_KEY);
+const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
 
 export const getIngredientDetails = async (name: string) => {
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
+    const response = {name: "", description: "", rating: ""}
 
-    const response = { description: "", stars: ""}
-
-    const promptD = `Write a brief less than 100 word description of the food ingreident: ${name}`
+    const promptD = `Write a brief less than 100 word description of the food ingreident: ${name} (if not a food ingredient just return "Not a Food Ingredient")`
     const resultD = await model.generateContent(promptD)
-    response.description = await resultD.response;
+    response.description = await resultD.response.text();
 
-    const promptS = `Give single numerical star rating out of 5 for this food ingredient as in terms of health: ${name}`
+    const promptS = `Give single numerical star rating out of 5 for this food ingredient as in terms of health: ${name} (if not a food ingredient just return "Not a Food Ingredient")`
     const resultS = await model.generateContent(promptS)
-    response.stars = await resultS.response;
+    response.rating = await resultS.response.text();
 
     return response
 }

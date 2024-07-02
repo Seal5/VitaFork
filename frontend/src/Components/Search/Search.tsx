@@ -5,7 +5,7 @@ type Props = {
     onSearchComplete: (ingredient: any) => void;
 };
 
-const Search : React.FC<Props> = (props: Props) => {
+const Search : React.FC<Props> = ( { onSearchComplete }) => {
     const [search,  setSearch] = useState<string>("");
     const [ingredientDetails, setIngredientDetails] = useState<any>(null);
 
@@ -15,7 +15,8 @@ const Search : React.FC<Props> = (props: Props) => {
 
     const onClick = async (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         const details = await getIngredientDetails(search);
-        setIngredientDetails(details)
+        setIngredientDetails(details);
+        onSearchComplete(details);
     };
 
     return (

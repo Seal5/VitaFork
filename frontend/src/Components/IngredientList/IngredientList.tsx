@@ -5,7 +5,7 @@ type IngredientProps = {
   id: number;
   name: string;
   description: string;
-  rating: number;
+  rating: string;
 };
 
 type Props = {
