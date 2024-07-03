@@ -4,22 +4,25 @@ import Search from '../Search/Search'
 
 type Props = {}
 
+let idCounter = 0;
+
+// Will have to fix with backend
+const generateId = () => {
+    return ++idCounter;
+};
+
 const IngredientManager: React.FC = (props: Props) => {
     type IngredientProps = {
         id: number;
         name: string;
         description: string;
-        rating: number;
+        rating: string;
     };
 
-    const [ingredients, setIngredients] = useState<IngredientProps[]>([
-        { id: 1, name: 'Sugar', description: 'Sweet ingredient', rating: 4 },
-        { id: 2, name: 'Salt', description: 'Salty ingredient', rating: 3 },
-        { id: 3, name: 'Butter', description: 'Creamy ingredient', rating: 5 },
-      ]);
+    const [ingredients, setIngredients] = useState<IngredientProps[]>([]);
 
-    const onSearchComplete = (event : any) => {
-        const newIngredient = { id: Date.now(), name: event.target.value, description: 'New ingredient', rating: 3 };
+    const onSearchComplete = (ingredient: any) => {
+        const newIngredient = { id: generateId(), name: ingredient.name, description: ingredient.description, rating: ingredient.rating };
         setIngredients([...ingredients, newIngredient]);
     }
 

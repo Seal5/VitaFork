@@ -4,7 +4,7 @@ type Props = {
   id: number;
   name: string;
   description: string;
-  rating: number; 
+  rating: string; 
   onDelete: (id: number) => void;
 }
 
@@ -16,12 +16,13 @@ const Ingredient : React.FC<Props>  = ({ id, name, description, rating, onDelete
     }
     return stars
   }
+  // getStars(rating)
 
   return (
     <div>
       <h3>Ingredient: {name}</h3>
       <p>Description: {description}</p>
-      <p>Rating: {getStars(rating)}</p>
+      <p>Rating: {rating}</p>
       <button onClick={() => onDelete(id)}>Delete</button>
     </div>
   )
