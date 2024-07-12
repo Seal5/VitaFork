@@ -7,7 +7,7 @@ integrating the Gemini Pro LLM API and an Image-to-Text API to analyze ingredien
 
 • Managed a MySQL database to store user-specific ingredient data, ensuring efficient data transfer
 
-• Deployed the application using \textbf{AWS} cloud services, including EC2 for hosting and RDS for data managemen
+• Deployed the application using \textbf{AWS} cloud services, including EC2 for hosting and RDS for data management
 
 ## Instructions on Running This Locally
 
