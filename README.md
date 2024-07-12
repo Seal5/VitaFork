@@ -4,6 +4,7 @@ VitaFork is a web application designed to help users with food sensitivities ide
 
 • Built efficient RESTful APIs using .NET Core and C# for user authentication and ingredient classification,
 integrating the Gemini Pro LLM API and an Image-to-Text API to analyze ingredients in food package
+
 • Managed a MySQL database to store user-specific ingredient data, ensuring efficient data transfer
 
 ## Instructions on Running This Locally
