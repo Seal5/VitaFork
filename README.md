@@ -1,6 +1,6 @@
 # VitaFork
 
-VitaFork is a web application designed to help users with food sensitivities identify safe and trigger food ingredients
+### VitaFork is a web application designed to help users with food sensitivities identify safe and trigger food ingredients through food analysis 
 
 • Built efficient RESTful APIs using .NET Core and C# for user authentication and ingredient classification,
 integrating the Gemini Pro LLM API and an Image-to-Text API to analyze ingredients in food package
