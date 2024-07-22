@@ -1,5 +1,6 @@
 using System;
 using backend.Data;
+using backend.Mappers; 
 using Microsoft.AspNetCore.Mvc;
 
 namespace backend.Controllers
@@ -18,8 +19,8 @@ namespace backend.Controllers
 
         public IActionResult GetALL()
         {
-            var ingredients = _context.Ingredients.ToList();
-
+            var ingredients = _context.Ingredients.ToList()
+             .Select(s => s.ToIngredientDTO());
             return Ok(ingredients);
         }
 
